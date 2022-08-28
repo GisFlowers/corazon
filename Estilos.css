@@ -1,0 +1,40 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	}
+
+.corazon{
+	--tamaño: 200px;
+	--color: red;
+	height: var(--tamaño);
+	width: var(--tamaño);
+	background: var(--color);
+	transform: rotate(45deg);
+	animation: heart .7s infinite alternate ease;
+}
+
+.corazon, .corazon::before, .corazon::after{
+	height: var(--tamaño);
+	width: var(--tamaño);
+	background: var(--color);
+	position: absolute;
+}
+
+.corazon::before, .corazon::after{
+	content: "";
+	display: block;
+	border-radius: 50%;
+	transform: translateY(-100px);
+}
+
+.corazon::after{
+	transform: translateX(-100px);
+}
+
+@keyframes heart{
+	from{
+		transform:scale(1.2) rotate(45deg);
+	}
+}
